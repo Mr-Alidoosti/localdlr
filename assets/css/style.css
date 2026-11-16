@@ -1,0 +1,170 @@
+/**
+ * CDN File Manager & Download Center Styles
+ * Variable Font (IRANSansX), Metronic theme variables & custom components.
+ */
+
+@font-face {
+    font-family: 'IRANSansX';
+    src: url('../fonts/IRANSansXV.woff2') format('woff2-variations'),
+        url('../fonts/IRANSansXV.woff2') format('woff2'),
+        url('../fonts/IRANSansXV.woff') format('woff-variations'),
+        url('../fonts/IRANSansXV.woff') format('woff');
+    font-weight: 100 1000;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-primary: 'IRANSansX', system-ui, -apple-system;
+    --font-dots: 4;
+    --font-feature-settings: "ss02";
+    --font-feature-settings-en-num: "ss00";
+    --color-brand: #1B84FF;
+    --color-brand-hover: #056EE9;
+    --color-brand-light: #F1F6FF;
+    --color-heading: #1E2129;
+    --color-text: #4B5675;
+    --color-muted: #99A1B7;
+    --color-border: #F1F1F4;
+    --color-bg-page: #F8F9FA;
+}
+
+html.dark {
+    --color-heading: #FFFFFF;
+    --color-text: #99A1B7;
+    --color-muted: #6C7293;
+    --color-border: #262B36;
+    --color-bg-page: #15171C;
+}
+
+html.dark body {
+    background-color: var(--color-bg-page) !important;
+    color: var(--color-text) !important;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: #1E2129;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #374151;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #4B5563;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary) !important;
+    background-color: var(--color-bg-page);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: var(--font-feature-settings);
+    font-variation-settings: "DOTS" var(--font-dots);
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit !important;
+}
+
+/* LTR Typography Overrides */
+html[dir="ltr"] body,
+html[dir="ltr"] input,
+html[dir="ltr"] button,
+html[dir="ltr"] select,
+html[dir="ltr"] textarea {
+    font-family: var(--font-primary) !important;
+    font-feature-settings: normal !important;
+    font-variation-settings: normal !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F1F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
+}
+
+/* Card & Item Hover Transitions */
+.file-card-transition {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.file-card-transition:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+
+html.dark .file-card-transition:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+.folder-card-transition {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.folder-card-transition:hover {
+    transform: translateY(-2px);
+    border-color: #DDE9FF;
+    box-shadow: 0 8px 20px -4px rgba(27, 132, 255, 0.08);
+}
+
+html.dark .folder-card-transition:hover {
+    border-color: #1B84FF;
+    box-shadow: 0 8px 20px -4px rgba(27, 132, 255, 0.15);
+}
+
+html.dark select option {
+    background-color: #1E2129;
+    color: #FFFFFF;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin 1s linear infinite;
+}
+
+/* Toast Animation */
+.toast-visible {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Line Clamp */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
